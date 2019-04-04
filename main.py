@@ -1,6 +1,6 @@
 """
 test deploy to heroku 
-referenced: https://qiita.com/sh-tatsuno/items/55cd5f9e78b212fb57c2
+reference: https://qiita.com/sh-tatsuno/items/55cd5f9e78b212fb57c2
 """
 
 from flask import Flask, request, make_response, Response
@@ -29,13 +29,13 @@ attachments_json = [
 				"actions": [
 					{
 						"name": "choco1",
-						"text": "きのこ",
+						"text": "vi",
 						"value": "kinoko",
 						"type": "button"
 					},
 					{
 						"name": "choco2",
-						"text": "たけのこ",
+						"text": "emacs",
 						"value": "takenoko",
 						"type": "button"
 					}
@@ -63,9 +63,9 @@ def json_html():
 	form_json = json.loads(request.form["payload"])
 	val = form_json["actions"][0]["value"]
 	if val == "kinoko":
-		response_text = "よろしい、ならば戦争だ"
+		response_text = "VIM IS GOD"
 	else:
-		response_text = "よろしい、ならば盟友だ"
+		response_text = "WHAT A WASTE"
 	response = slack_client.api_call(
 		"chat.postMessage",
 		channel="#general",
