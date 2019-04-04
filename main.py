@@ -55,7 +55,7 @@ def index():
 	)
 	return make_response("", 200)
 
-@app.route("/slack/attachments", methods=["POST"])
+@app.route("/slack/json_html", methods=["POST"])
 def json_html():
 
 	# Parse the request payload
