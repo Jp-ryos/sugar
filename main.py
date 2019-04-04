@@ -47,6 +47,7 @@ attachments_json = [
 #when you access such as curl command, slackbot post interactive message
 @app.route("/", methods=["GET"])
 def index():
+	print("Hello")
 	slack_client.api_call(
 		"chat.postMessage",
 		channel="#general",
